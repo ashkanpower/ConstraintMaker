@@ -28,7 +28,7 @@ class ConstraintMaker {
     var view : UIView!
     var otherView : UIView?
     
-    init(_ view : UIView){
+    public init(_ view : UIView){
         view.translatesAutoresizingMaskIntoConstraints = false
         self.view = view
     }
