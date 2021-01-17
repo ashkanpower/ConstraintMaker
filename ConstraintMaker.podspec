@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ConstraintMaker"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.3"
   spec.summary      = "A readable easy to use constraint library."
 
   spec.description  = <<-DESC
@@ -13,7 +13,7 @@ We designed this library so it would be easy to use and have beautiful syntax.
 
   spec.homepage     = "https://github.com/ashkanpower/ConstraintMaker"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author       = { "ashkan" => "ashkanpower@gmail.com" }
+  spec.author       = { "Ashkan Ghodrat" => "ashkanpower@gmail.com" }
 
   spec.ios.deployment_target = "9.0"
   spec.swift_version = "4.2"
@@ -21,4 +21,5 @@ We designed this library so it would be easy to use and have beautiful syntax.
   spec.source        = { :git => "https://github.com/ashkanpower/ConstraintMaker.git", :tag => "#{spec.version}" }
   spec.source_files  = "ConstraintMaker/**/*.{h,m,swift}"
 
+#pod trunk push // run to push after each realease
 end

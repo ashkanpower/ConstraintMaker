@@ -9,20 +9,20 @@
 import Foundation
 import UIKit
 
-enum Prioarity : Int{
+public enum Prioarity : Int{
     case high = 1000
     case more = 750
     case normal = 500
     case low = 250
 }
 
-enum SpaceType {
+public enum SpaceType {
     case equal
     case greater
     case lessThan
 }
 
-class ConstraintMaker {
+public class ConstraintMaker {
     
     
     var view : UIView!
@@ -33,14 +33,14 @@ class ConstraintMaker {
         self.view = view
     }
     
-    func to(_ otherView : UIView?)->ConstraintMaker {
+    public func to(_ otherView : UIView?)->ConstraintMaker {
         //otherView?.translatesAutoresizingMaskIntoConstraints = false
         view.translatesAutoresizingMaskIntoConstraints = false
         self.otherView = otherView
         return self
     }
     
-    func toParent()->ConstraintMaker {
+    public func toParent()->ConstraintMaker {
         //otherView?.translatesAutoresizingMaskIntoConstraints = false
         view.translatesAutoresizingMaskIntoConstraints = false
         self.otherView = view.superview
@@ -56,13 +56,13 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func leading(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func leading(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         makeConstraint(leading, view.leadingAnchor, otherView!.leadingAnchor, constant: constant, prioarity: prioarity, type)
         return self
     }
     
     @discardableResult
-    func leadingTrailing(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func leadingTrailing(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         makeConstraint(leading, view.leadingAnchor, otherView!.trailingAnchor, constant: constant, prioarity: prioarity, type)
         return self
     }
@@ -77,13 +77,13 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func trailing(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func trailing(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         makeConstraint(trailing, otherView!.trailingAnchor, view.trailingAnchor, constant: constant, prioarity: prioarity, type)
         return self
     }
     
     @discardableResult
-    func trailingLeading(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func trailingLeading(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         makeConstraint(trailing, otherView!.leadingAnchor, view.trailingAnchor, constant: constant, prioarity: prioarity, type)
         return self
     }
@@ -96,13 +96,13 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func top(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func top(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         makeConstraint(top, view.topAnchor, otherView!.topAnchor, constant: constant, prioarity: prioarity, type)
         return self
     }
     
     @discardableResult
-    func topSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func topSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         if #available(iOS 11, *) {
             makeConstraint(top, view.topAnchor, otherView!.safeAreaLayoutGuide.topAnchor, constant: constant, prioarity: prioarity, type)
         } else {
@@ -112,14 +112,14 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func topBottom(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func topBottom(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         makeConstraint(top, view.topAnchor, otherView!.bottomAnchor, constant: constant, prioarity: prioarity, type)
         return self
     }
     
     
     @discardableResult
-    func topBottomSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func topBottomSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         if #available(iOS 11, *) {
             makeConstraint(top, view.topAnchor, otherView!.safeAreaLayoutGuide.bottomAnchor, constant: constant, prioarity: prioarity, type)
@@ -140,13 +140,13 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func bottom(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func bottom(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         makeConstraint(bottom, otherView!.bottomAnchor, view.bottomAnchor, constant: constant, prioarity: prioarity, type)
         return self
     }
     
     @discardableResult
-    func bottomSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func bottomSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         if #available(iOS 11, *) {
             makeConstraint(bottom, otherView!.safeAreaLayoutGuide.bottomAnchor, view.bottomAnchor, constant: constant, prioarity: prioarity, type)
         } else {
@@ -157,13 +157,13 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func bottomTop(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func bottomTop(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         makeConstraint(bottom, otherView!.topAnchor, view.bottomAnchor, constant: constant, prioarity: prioarity, type)
         return self
     }
     
     @discardableResult
-    func bottomTopSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func bottomTopSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         if #available(iOS 11, *) {
             makeConstraint(bottom, otherView!.safeAreaLayoutGuide.topAnchor, view.bottomAnchor, constant: constant, prioarity: prioarity, type)
@@ -177,7 +177,7 @@ class ConstraintMaker {
     //other edges
     
     @discardableResult
-    func allEdge(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func allEdge(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         leading(constant, prioarity, type)
         trailing(constant, prioarity, type)
         top(constant, prioarity, type)
@@ -186,7 +186,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func allEdge(widthPadding : CGFloat = CGFloat(0), heightPadding : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func allEdge(widthPadding : CGFloat = CGFloat(0), heightPadding : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         leading(widthPadding, prioarity, type)
         trailing(widthPadding, prioarity, type)
         top(heightPadding, prioarity, type)
@@ -195,7 +195,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func allEdgeSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func allEdgeSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         leading(constant, prioarity, type)
         trailing(constant, prioarity, type)
         topSafe(constant, prioarity, type)
@@ -204,7 +204,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func allEdgeSafe(widthPadding : CGFloat = CGFloat(0), heightPadding : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func allEdgeSafe(widthPadding : CGFloat = CGFloat(0), heightPadding : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         leading(widthPadding, prioarity, type)
         trailing(widthPadding, prioarity, type)
         topSafe(heightPadding, prioarity, type)
@@ -213,7 +213,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillTopPart(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func fillTopPart(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         top(constant, prioarity, type)
         trailing(constant, prioarity, type)
         leading(constant, prioarity, type)
@@ -221,7 +221,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillLeadingPart(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func fillLeadingPart(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         top(constant, prioarity, type)
         bottom(constant, prioarity, type)
         leading(constant, prioarity, type)
@@ -229,7 +229,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillTrailingPart(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func fillTrailingPart(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         top(constant, prioarity, type)
         bottom(constant, prioarity, type)
         trailing(constant, prioarity, type)
@@ -237,7 +237,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillBottomPart(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func fillBottomPart(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         leading(constant, prioarity, type)
         bottom(constant, prioarity, type)
         trailing(constant, prioarity, type)
@@ -245,7 +245,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillTopPartSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func fillTopPartSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         topSafe(constant, prioarity, type)
         trailing(constant, prioarity, type)
         leading(constant, prioarity, type)
@@ -253,7 +253,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillLeadingPartSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func fillLeadingPartSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         top(constant, prioarity, type)
         bottomSafe(constant, prioarity, type)
         leading(constant, prioarity, type)
@@ -261,7 +261,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillTrailingPartSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func fillTrailingPartSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         topSafe(constant, prioarity, type)
         bottomSafe(constant, prioarity, type)
         trailing(constant, prioarity, type)
@@ -269,7 +269,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillBottomPartSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func fillBottomPartSafe(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         leading(constant, prioarity, type)
         bottomSafe(constant, prioarity, type)
         trailing(constant, prioarity, type)
@@ -277,7 +277,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillTopSafeArea() -> ConstraintMaker{
+    public func fillTopSafeArea() -> ConstraintMaker{
         top()
         bottomTopSafe()
         trailing()
@@ -286,7 +286,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func fillBottomSafeArea() -> ConstraintMaker{
+    public func fillBottomSafeArea() -> ConstraintMaker{
         bottom()
         topBottomSafe()
         trailing()
@@ -303,14 +303,14 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func width(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func width(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         makeConstraint(width, first: view.widthAnchor, constant: constant, prioarity: prioarity, type: type)
         return self
     }
     
     @discardableResult
-    func sameWidth(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func sameWidth(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         makeConstraint(width, view.widthAnchor, otherView!.widthAnchor, constant: constant, prioarity: prioarity, type)
         return self
@@ -324,14 +324,14 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func height(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func height(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         makeConstraint(height, first: view.heightAnchor, constant: constant, prioarity: prioarity, type: type)
         return self
     }
     
     @discardableResult
-    func sameHeight(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func sameHeight(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         makeConstraint(height, view.heightAnchor, otherView!.heightAnchor, constant: constant, prioarity: prioarity, type)
         return self
@@ -339,7 +339,7 @@ class ConstraintMaker {
     
     
     @discardableResult
-    func size(_ _width : CGFloat = CGFloat(0), _ _height : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func size(_ _width : CGFloat = CGFloat(0), _ _height : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         width(_width, prioarity, type)
         height(_height, prioarity, type)
@@ -347,7 +347,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func sameSize(_ _width : CGFloat = CGFloat(0), _ _height : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func sameSize(_ _width : CGFloat = CGFloat(0), _ _height : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         sameWidth(_width, prioarity, type)
         sameHeight(_height, prioarity, type)
@@ -355,7 +355,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func aspectRatio(_ _width : CGFloat = CGFloat(1), _ _height : CGFloat = CGFloat(1), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func aspectRatio(_ _width : CGFloat = CGFloat(1), _ _height : CGFloat = CGFloat(1), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         if let con = findConstraint(.width) {
             con.isActive = false
@@ -374,7 +374,7 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func centerX(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func centerX(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         makeConstraint(centerX, view.centerXAnchor, otherView!.centerXAnchor, constant: constant, prioarity: prioarity, type)
         return self
@@ -388,14 +388,14 @@ class ConstraintMaker {
     }
     
     @discardableResult
-    func centerY(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func centerY(_ constant : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         makeConstraint(centerY, view.centerYAnchor,  otherView!.centerYAnchor, constant: constant, prioarity: prioarity,  type)
         return self
     }
     
     @discardableResult
-    func center(_ x : CGFloat = CGFloat(0), _ y : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
+    public func center(_ x : CGFloat = CGFloat(0), _ y : CGFloat = CGFloat(0), _ prioarity : Prioarity = .high , _ type : SpaceType = .equal) -> ConstraintMaker{
         
         centerX(x, prioarity, type)
         centerY(y, prioarity, type)
@@ -547,43 +547,18 @@ class ConstraintMaker {
 
 extension UIView {
     
-    func addAndConstraint(to otherView : UIView?) -> ConstraintMaker {
+    public func addAndConstraint(to otherView : UIView?) -> ConstraintMaker {
         otherView?.addSubview(self)
         return ConstraintMaker(self).to(otherView)
     }
     
-    func constraint(to otherView : UIView?) -> ConstraintMaker {
+    public func constraint(to otherView : UIView?) -> ConstraintMaker {
         
         return ConstraintMaker(self).to(otherView)
     }
     
   
-    var con : ConstraintMaker {
+    public var con : ConstraintMaker {
         return ConstraintMaker(self)
     }
-}
-
-class Animation {
-    
-    var animations : [(() -> Void)] = []
-}
-
-extension UIView {
-    
-    func animate(_ duration : Double, after : Double, _ animations : @escaping ((_ holder : ConstraintMaker)->Void)){
-        
-        let when = DispatchTime.now() + after
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            
-            let holder = self.constraint(to: self.superview)
-            animations(holder)
-            
-            UIView.animate(withDuration: duration) {
-                
-                self.superview?.layoutIfNeeded()
-            }
-        }
-        
-    }
-    
 }
