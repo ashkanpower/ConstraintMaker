@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E30844BD25B43A1D006036CE /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30844BC25B43A1D006036CE /* ConstraintMaker.swift */; };
+		E30844D825B43F07006036CE /* ConstraintMaker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E30844D725B43F07006036CE /* ConstraintMaker.podspec */; };
 		E394581A25B42C3C00D799D5 /* ConstraintMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E394581025B42C3C00D799D5 /* ConstraintMaker.framework */; };
 		E394581F25B42C3C00D799D5 /* ConstraintMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394581E25B42C3C00D799D5 /* ConstraintMakerTests.swift */; };
 		E394582125B42C3C00D799D5 /* ConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = E394581325B42C3C00D799D5 /* ConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E30844C625B43CD4006036CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E394580725B42C3C00D799D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E394582F25B42CC700D799D5;
+			remoteInfo = ConstraintMakerExample;
+		};
 		E394581B25B42C3C00D799D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E394580725B42C3C00D799D5 /* Project object */;
@@ -29,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E30844BC25B43A1D006036CE /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		E30844D725B43F07006036CE /* ConstraintMaker.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ConstraintMaker.podspec; sourceTree = "<group>"; };
 		E394581025B42C3C00D799D5 /* ConstraintMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConstraintMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E394581325B42C3C00D799D5 /* ConstraintMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstraintMaker.h; sourceTree = "<group>"; };
 		E394581425B42C3C00D799D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +89,7 @@
 				E394581D25B42C3C00D799D5 /* ConstraintMakerTests */,
 				E394583125B42CC700D799D5 /* ConstraintMakerExample */,
 				E394581125B42C3C00D799D5 /* Products */,
+				E30844D725B43F07006036CE /* ConstraintMaker.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +108,7 @@
 			children = (
 				E394581325B42C3C00D799D5 /* ConstraintMaker.h */,
 				E394581425B42C3C00D799D5 /* Info.plist */,
+				E30844BC25B43A1D006036CE /* ConstraintMaker.swift */,
 			);
 			path = ConstraintMaker;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 			);
 			dependencies = (
 				E394581C25B42C3C00D799D5 /* PBXTargetDependency */,
+				E30844C725B43CD4006036CE /* PBXTargetDependency */,
 			);
 			name = ConstraintMakerTests;
 			productName = ConstraintMakerTests;
@@ -201,6 +215,7 @@
 				TargetAttributes = {
 					E394580F25B42C3C00D799D5 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					E394581825B42C3C00D799D5 = {
 						CreatedOnToolsVersion = 12.2;
@@ -235,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E30844D825B43F07006036CE /* ConstraintMaker.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E30844BD25B43A1D006036CE /* ConstraintMaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +303,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E30844C725B43CD4006036CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E394582F25B42CC700D799D5 /* ConstraintMakerExample */;
+			targetProxy = E30844C625B43CD4006036CE /* PBXContainerItemProxy */;
+		};
 		E394581C25B42C3C00D799D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E394580F25B42C3C00D799D5 /* ConstraintMaker */;
@@ -365,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -423,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -438,6 +460,7 @@
 		E394582525B42C3C00D799D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -453,6 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pow.ashkan.ghodrat.ConstraintMaker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,6 +485,7 @@
 		E394582625B42C3C00D799D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -484,6 +509,7 @@
 		E394582825B42C3C00D799D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ConstraintMakerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,6 +527,7 @@
 		E394582925B42C3C00D799D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ConstraintMakerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
