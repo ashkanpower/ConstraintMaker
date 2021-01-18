@@ -8,7 +8,7 @@ how to install
 ```
 pod 'ConstraintMaker', '~> 0.0'
 ```
-# Example 
+# How To Use 
 ```
 view2.con.to(view1)
   .allEdge(8)
@@ -89,4 +89,19 @@ to(otherView)
 .centerX()
 .centerY()
 ```
+# Example
+<img src="https://github.com/ashkanpower/ConstraintMaker/blob/master/images/example1.png" center width="100px"  alt="" />
+```
+view1.addAndConstraint(to: view)
+    .fillTopPartSafe(8)
+    .height(100)
 
+view2.addAndConstraint(to: view1)
+    .fillLeadingPart(8)
+
+view3.addAndConstraint(to: view1)
+    .fillTrailingPart(8)
+    .to(view2)
+    .sameWidth()
+    .leadingTrailing(8)
+```
