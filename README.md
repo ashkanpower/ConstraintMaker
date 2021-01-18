@@ -8,3 +8,11 @@ how to install
 ```
 pod 'ConstraintMaker', '~> 0.0'
 ```
+Example 
+```
+view2.con.to(view1)
+  .allEdge(8)
+  .sameHeight()
+  .width(100)
+  .aspectRatio() // 1:1
+```
