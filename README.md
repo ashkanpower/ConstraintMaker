@@ -47,6 +47,7 @@ you can also call toParent() to access superView
 # Edge Constraints
 
 ```
+.to(otherView)
 .leading()
 .trailing()
 .top()
@@ -67,3 +68,25 @@ you can also call toParent() to access superView
 .fillBottomPartSafe()
 
 ```
+
+# sizing Constraints
+```
+.aspectRatio() //self
+.width()       //self
+.height()      //self
+.size()        //self
+
+.to(otherView)
+.sameSize()
+.sameWidth()
+.sameHeight()
+```
+
+# positioning Constraints
+```
+to(otherView)
+.center()
+.centerX()
+.centerY()
+```
+
