@@ -90,7 +90,7 @@ to(otherView)
 .centerY()
 ```
 # Example
-<img src="https://github.com/ashkanpower/ConstraintMaker/blob/master/images/example1.png" center width="100px"  alt="" />
+
 ```
 view1.addAndConstraint(to: view)
     .fillTopPartSafe(8)
@@ -105,3 +105,6 @@ view3.addAndConstraint(to: view1)
     .sameWidth()
     .leadingTrailing(8)
 ```
+
+<img src="https://github.com/ashkanpower/ConstraintMaker/blob/master/images/example1.png" center width="200px"  alt="" />
+<br/>
