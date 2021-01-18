@@ -43,6 +43,13 @@ as you can see you can change the other view in middle of a block</br>
 if the constraint function is aimed to self, it ignores the other view
 </br></br>
 you can also call toParent() to access superView
+</br></br>
+if you want to add the view and constraint at the same time, you can simply call '.addAndConstraint(to: _)' to add view to its otherView and get a refrence of constraintMaker
+
+```
+view.addAndConstraint(to: view1)
+  .allEdge()
+```
 
 # Edge Constraints
 
